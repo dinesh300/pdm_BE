@@ -1,0 +1,129 @@
+{
+  "spec_version": "1.0",
+  "source_standards": ["ISO 10816-3", "NEMA MG-1", "IEC 60034-1"],
+  "motor_classes": {
+    "medium_rigid_15_75kw": {
+      "description": "Motors 15-75kW, rigid mounting (ISO 10816-3 Group 2)",
+      "power_kw_range": [15, 75],
+      "mounting_type": "rigid",
+      "insulation_class": "F",
+      "insulation_temp_rise_limit_c": 105,
+      "ambient_ref_temp_c": 40,
+      "parameters": {
+        "vibration_mms": {
+          "unit": "mm/s RMS",
+          "zones": {
+            "normal":   {"min": 0.0, "max": 1.8},
+            "watch":    {"min": 1.8, "max": 4.5},
+            "alarm":    {"min": 4.5, "max": 7.1},
+            "critical": {"min": 7.1, "max": null}
+          }
+        },
+        "current_A": {
+          "unit": "A",
+          "rated": null,
+          "zones_pct_of_rated": {
+            "normal":   {"min": 0.0, "max": 1.05},
+            "watch":    {"min": 1.05, "max": 1.10},
+            "alarm":    {"min": 1.10, "max": 1.20},
+            "critical": {"min": 1.20, "max": null}
+          }
+        },
+        "voltage_V": {
+          "unit": "V",
+          "rated": null,
+          "tolerance_pct": 5,
+          "zones_pct_of_rated": {
+            "normal":   {"min": 0.95, "max": 1.05},
+            "watch":    {"min": 0.90, "max": 1.10},
+            "alarm":    {"min": 0.85, "max": 1.15},
+            "critical": {"min": null, "max": null}
+          }
+        },
+        "winding_temp_C": {
+          "unit": "C",
+          "limit_c": 145,
+          "zones_pct_of_limit": {
+            "normal":   {"min": 0.0, "max": 0.80},
+            "watch":    {"min": 0.80, "max": 0.90},
+            "alarm":    {"min": 0.90, "max": 1.0},
+            "critical": {"min": 1.0, "max": null}
+          }
+        },
+        "bearing_temp_C": {
+          "unit": "C",
+          "limit_c": 95,
+          "zones_pct_of_limit": {
+            "normal":   {"min": 0.0, "max": 0.80},
+            "watch":    {"min": 0.80, "max": 0.90},
+            "alarm":    {"min": 0.90, "max": 1.0},
+            "critical": {"min": 1.0, "max": null}
+          }
+        },
+        "power_factor": {
+          "unit": "ratio",
+          "expected_range": {"min": 0.80, "max": 0.92}
+        },
+        "current_imbalance_pct": {
+          "unit": "%",
+          "zones": {
+            "normal":   {"min": 0.0, "max": 4.0},
+            "watch":    {"min": 4.0, "max": 8.0},
+            "alarm":    {"min": 8.0, "max": 12.0},
+            "critical": {"min": 12.0, "max": null}
+          }
+        }
+      }
+    }
+  },
+  "fault_priors": {
+    "bearing_wear": {
+      "description": "Bearing degradation / lubrication failure",
+      "signature": {
+        "vibration_mms": "increasing",
+        "bearing_temp_C": "increasing",
+        "current_A": "stable"
+      },
+      "prior_probability": 0.30
+    },
+    "overload": {
+      "description": "Sustained overload condition",
+      "signature": {
+        "current_A": "increasing",
+        "winding_temp_C": "increasing",
+        "rpm": "stable_or_decreasing"
+      },
+      "prior_probability": 0.20
+    },
+    "winding_fault_imbalance": {
+      "description": "Winding fault or supply voltage imbalance",
+      "signature": {
+        "current_imbalance_pct": "increasing",
+        "vibration_mms": "stable"
+      },
+      "prior_probability": 0.15
+    },
+    "misalignment_looseness": {
+      "description": "Coupling misalignment or mechanical looseness",
+      "signature": {
+        "vibration_mms": "sudden_increase",
+        "rpm": "stable"
+      },
+      "prior_probability": 0.15
+    },
+    "cooling_blockage": {
+      "description": "Ventilation/cooling blockage",
+      "signature": {
+        "winding_temp_C": "increasing",
+        "vibration_mms": "stable",
+        "current_A": "stable"
+      },
+      "prior_probability": 0.10
+    },
+    "normal_operation": {
+      "description": "No fault - normal operating variation",
+      "signature": {},
+      "prior_probability": 0.10
+    }
+  }
+}

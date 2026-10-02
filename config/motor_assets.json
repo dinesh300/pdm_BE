@@ -1,0 +1,12 @@
+{
+  "MTR-001": {"power_kw": 15,   "mounting_type": "rigid", "motor_class": "medium_rigid_15_75kw", "rated_current_A": 28,  "rated_voltage_V": 415, "rated_rpm": 1480, "scenario": "normal"},
+  "MTR-002": {"power_kw": 18.5, "mounting_type": "rigid", "motor_class": "medium_rigid_15_75kw", "rated_current_A": 34,  "rated_voltage_V": 415, "rated_rpm": 1480, "scenario": "bearing_wear"},
+  "MTR-003": {"power_kw": 22,   "mounting_type": "rigid", "motor_class": "medium_rigid_15_75kw", "rated_current_A": 40,  "rated_voltage_V": 415, "rated_rpm": 1480, "scenario": "overload"},
+  "MTR-004": {"power_kw": 30,   "mounting_type": "rigid", "motor_class": "medium_rigid_15_75kw", "rated_current_A": 54,  "rated_voltage_V": 415, "rated_rpm": 1480, "scenario": "winding_fault_imbalance"},
+  "MTR-005": {"power_kw": 37,   "mounting_type": "rigid", "motor_class": "medium_rigid_15_75kw", "rated_current_A": 66,  "rated_voltage_V": 415, "rated_rpm": 1480, "scenario": "misalignment_looseness"},
+  "MTR-006": {"power_kw": 45,   "mounting_type": "rigid", "motor_class": "medium_rigid_15_75kw", "rated_current_A": 80,  "rated_voltage_V": 415, "rated_rpm": 1480, "scenario": "normal"},
+  "MTR-007": {"power_kw": 55,   "mounting_type": "rigid", "motor_class": "medium_rigid_15_75kw", "rated_current_A": 96,  "rated_voltage_V": 415, "rated_rpm": 1480, "scenario": "bearing_wear"},
+  "MTR-008": {"power_kw": 63,   "mounting_type": "rigid", "motor_class": "medium_rigid_15_75kw", "rated_current_A": 110, "rated_voltage_V": 415, "rated_rpm": 1480, "scenario": "overload"},
+  "MTR-009": {"power_kw": 70,   "mounting_type": "rigid", "motor_class": "medium_rigid_15_75kw", "rated_current_A": 122, "rated_voltage_V": 415, "rated_rpm": 1480, "scenario": "normal"},
+  "MTR-010": {"power_kw": 75,   "mounting_type": "rigid", "motor_class": "medium_rigid_15_75kw", "rated_current_A": 130, "rated_voltage_V": 415, "rated_rpm": 1480, "scenario": "misalignment_looseness"}
+}
