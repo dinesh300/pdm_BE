@@ -1,0 +1,16 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+fastapi>=0.115
+uvicorn>=0.30
+pydantic>=2
+numpy>=2
+pandas>=2.2
+scikit-learn>=1.4
+scipy
+joblib
+torch>=2.3
+pgmpy
+shap
+ruptures
+PyYAML
+requests
+anthropic
